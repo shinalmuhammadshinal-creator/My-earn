@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MY EARN</title>
+<style>
+body{margin:0;background:#f1f5f9;font-family:Arial;color:#0f172a}
+header{background:#0b1220;color:white;text-align:center;padding:24px}
+header h1{color:#4ade80;margin:0}
+main{max-width:550px;margin:20px auto;padding:15px}
+.card{background:white;padding:20px;border-radius:16px;margin-bottom:15px}
+.dark{background:#0b1220;color:white}
+.amount{font-size:34px;font-weight:bold}
+button{padding:13px;border:0;border-radius:9px;background:#16a34a;color:white;font-size:16px;width:100%;margin-top:10px}
+input{padding:12px;width:90%;border:1px solid #ccc;border-radius:8px;margin-top:8px}
+.small{color:#64748b;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>MY EARN 💰</h1>
+<p>Refer friends. Earn rewards.</p>
+</header>
+<main>
+<section class="card dark">
+<p>DEMO WALLET BALANCE</p>
+<div class="amount">₹0.00</div>
+<p class="small">Demo balance only — not real money</p>
+</section>
+
+<section class="card">
+<h2>My Referral</h2>
+<p>Referral code: <b>MYEARN123</b></p>
+<button onclick="share()">Share MY EARN</button>
+</section>
+
+<section class="card">
+<h2>Step 4: KYC Verification</h2>
+<p>Verification fee: $10 USD (proposed)</p>
+<p>KYC and fee terms must be verified before payment.</p>
+<p>Refund conditions: To be confirmed.</p>
+<button disabled style="background:#94a3b8">Payment unavailable</button>
+</section>
+
+<section class="card">
+<h2>Admin Login</h2>
+<p class="small">Admin dashboard demo — not secured for real data.</p>
+<input id="email" type="email" placeholder="Admin email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="admin()">Open demo dashboard</button>
+<div id="panel" hidden>
+<h3>MY EARN Admin Dashboard</h3>
+<p>Business revenue: ₹0.00</p>
+<p>Total users: 0</p>
+<p>Rewards paid: ₹0.00</p>
+<p>Transactions: 0</p>
+<p class="small">Demo values only. Real admin authentication is not connected.</p>
+</div>
+</section>
+</main>
+<script>
+function share(){
+ const link=location.href;
+ if(navigator.share){
+  navigator.share({title:"MY EARN",url:link}).catch(()=>{});
+ }else{
+  prompt("Copy this website link",link);
+ }
+}
+function admin(){
+ document.getElementById("panel").hidden=false;
+}
+</script>
+</body>
+</html>
